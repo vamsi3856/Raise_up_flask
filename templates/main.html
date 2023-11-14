@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../static/sstyle.css">
+    <title>Raise up</title>
+</head>
+<body>
+    
+    <header class="fixed top-0 w-full z-30 bg-white-500 transition-all pt-2 shadow-lg">
+        <nav class="max-w-screen-xl px-6 sm:px-8 lg:px-10 mx-auto grid grid-flow-col py-3">
+            <div class="col-start-1 col-end-2 flex items-center">
+                <img class="h-16 aspect-ratio" src="../static/images/favicon.jpg" alt="">
+                <h2 class="font-semibold pl-2 text-xl">Raise up</h2>
+            </div>
+            <ul class="hidden sm:flex col-start-12 col-end-16 text-black-500 items-center">
+                <a href="#home" class="px-4 py-2 mx-2 cursor-pointer inline-block relative text-black-500 hover:text-orange-500 link-underline underline-animate">Home</a>
+                <a href="#about" class="px-4 py-2 mx-2 cursor-pointer inline-block relative text-black-500 hover:text-orange-500 link-underline underline-animate">About Us</a>
+                <a href="#issues" class="px-4 py-2 mx-2 cursor-pointer inline-block relative text-black-500 hover:text-orange-500 link-underline underline-animate">Issues</a>
+                <a href="#help" class="px-4 py-2 mx-2 cursor-pointer inline-block relative text-black-500 hover:text-orange-500 link-underline underline-animate">Get Help</a>
+                <a href="/logout" class="px-4 py-2 mx-2 cursor-pointer inline-block relative text-black-500 hover:text-orange-500 link-underline underline-animate">Logout</a>
+                <h2 class="head_name">Welcome &nbsp&nbsp<b>{{ name }}</b></h2>
+            </ul>
+        </nav>
+    </header>
+
+    <div  id="home" class="max-w-screen-xl mt-20 mx-auto landing flex items-center justify-center">
+        <div class="w-1/2">
+            <h2 class="text-2xl md:text-4xl text-white font-mono">
+                Raise your voice not so to shout, but so that those without a voice can be heared!
+            </h2>
+        </div>
+    </div>
+
+    <div id="about" class="xl:px-12 px-8 lg:mt-20 py-20 2xl:mx-auto 2xl:container relative">
+        <div class="mt-14 md:flex">
+            <div data-aos="fade-right" class="relative lg:w-1/2 sm:w-96 xl:h-96 h-80" data-aos="fade-right">
+                <img src="../static/images/image5.jpg" alt="" class="w-full h-full flex-shrink-0 object-fit object-cover shadow-lg rounded" />
+                <div class="h-32 w-32 md:flex hidden items-center justify-center absolute top-0 -mr-16 -mt-14 right-0 bg-orange-200 rounded-full">
+                    <img src="../static/images/quotes.png" alt="">
+                </div>
+            </div>
+            <div data-aos="fade-left" class="md:w-1/3 lg:w-1/3 xl:ml-32 md:ml-20 md:mt-0 mt-4 flex flex-col justify-center" data-aos="fade-left">
+                <h1 class="text-5xl font-semibold font-serif xl:leading-loose text-gray-800 dark:text-white ">About Us</h1>
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-gray-200">
+                    We want to help women speak out about problems that they face and help them find solutions for issues they encounter.
+                    We will help them to get virtual consulation about different issues that they face such as sexual harassment, domestic abuse, or gender discrimination.
+                    We provide consultation to help women know that the negative treatments they faced were not their faults and help them speak up to seek help. 
+                    We have different forums for women to connect with others who face same issues to share and seek advice.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="issues" class="bg-gray-200">
+        <div class="mx-auto container py-24">
+            <div class="flex justify-center items-center flex-col">
+                <h1 class="lg:text-6xl md:text-5xl text-4xl font-black leading-10 text-center text-gray-800 font-serif">
+                    Crimes Against Women
+                </h1>
+
+                <div class="pt-20 grid md:grid-cols-2 lg:grid-cols-3 justify-center items-center md:px-4 gap-4 lg-gap-8">    
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/g2.jpg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 z-50 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+
+                                <a href="/sexualViolence">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Sexual Violence</h2>   
+                    </div>
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/g6.jpg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 z-50 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+                                <a href="/domesticViolence">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Domestic Violence</h2>   
+                    </div>
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/g7.jpg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+                                <a href="/genderdisc">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Gender Discrimination</h2>   
+                    </div>
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/g8.jpg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+                                <a href="/childMarriage">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Child Marriage</h2>   
+                    </div>
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/g9.jpg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+                   <a href="/womentrafficking">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Women Trafficking</h2>   
+                    </div>
+                    <div data-aos="zoom-in" class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+                        <div class="relative z-10" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));">
+                          <img class="w-full" src="../static/images/i6.jpeg" alt="" />
+                        </div>
+                        <div class="flex justify-end items-center flex-row px-6 -mt-10">
+                            <button class="z-10 p-4 rounded-full bg-gray-200 hover:bg-gray-400 focus:bg-gray-500 transition ease-in duration-200 focus:outline-none">
+
+                                <a href="/cybercrime">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16"> 
+                                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/> 
+                                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/> 
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                        <h2 class="p-4 text-2xl font-serif font-bold">Cyber Crimes</h2>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="help" class="w-full max-w-screen-xl mx-auto">
+        <div class="bg-image">
+            <div class="flex flex-col justify-center items-center">
+                <i class="fa-solid fa-gem z-20 text-5xl text-orange-500"></i>
+                <h2 class="text-5xl text-white text-center z-20 mt-4 mb-8 px-20 font-bold font-serif">
+                    Are You Facing Abuse?
+                </h2>
+                <h2 class="text-3xl text-white text-center z-20 mt-2 mb-8 px-20 font-bold font-serif">
+                    Do not be silent. <br> Raise your voice!
+                </h2>
+                <div class="flex flex-row">
+                    <button data-aos="fade-right" class="py-3 z-20 lg:py-4 px-12 lg:px-16 mr-4 text-white font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none undefined">
+                        <a href="/getHelp">Get Help</a>
+                    </button>
+                    <button data-aos="fade-left" class="py-3 z-20 lg:py-4 px-12 ml-4 lg:px-16 text-white font-semibold rounded-lg bg-orange-500 hover:shadow-orange-md transition-all outline-none undefined">
+                        <a href="http://ncwapps.nic.in/onlinecomplaintsv2/">Report Now</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center text-gray-700 p-8" style="background: rgb(0, 0, 0, 0.1);">
+        © 2023 Copyright: <a class="text-gray-800 fn1" href="#">Speak Out</a>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+        })
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

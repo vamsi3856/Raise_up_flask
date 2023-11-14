@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/userlist.css">
+    </head>
+    <body>
+        <div class="nv">
+            <a href="/"><b>Go Back</b></a>
+        </div>
+            <h1>Raised hands✊</h1>
+            <center><table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Issue</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td> 
+                        <form action="{{ url_for('delete_row', name=row[0]) }}" method="post">
+                            <input class="btn" type="submit" value="solved"/>
+                        </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table></center>
+        <script src="" async defer></script>
+    </body>
+</html>

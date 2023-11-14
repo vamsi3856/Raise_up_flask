@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">   
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../static/sstyle.css">
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+    <title>Speak Out</title>
+</head>
+<body>
+    
+    <header class="fixed top-0 w-full z-30 bg-white-500 transition-all pt-2 shadow-lg">
+        <nav class="max-w-screen-xl px-6 sm:px-8 lg:px-10 mx-auto grid grid-flow-col py-4">
+            <div class="col-start-1 col-end-2 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16"> <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/> </svg>
+                <a href="/main" class="text-xl font-semibold font-mono ml-2">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    
+    <div class="mx-auto container py-8 px-2 md:px-8 mt-12">
+        <div class="w-full flex justify-center">
+            <div class="w-full bg-gradient-to-r from-gray-700 via-gray-900 to-black md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16">
+                <div>
+                    <div class="flex flex-wrap items-center md:flex-row flex-col-reverse">
+                        <div data-aos="fade-right" class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
+                            <div >
+                                <h1 class="text-3xl md:text-4xl lg:text-5xl lg:w-10/12 text-white font-black leading-normal md:text-left text-center">
+                                    Facing Abuse? <br> <span class="text-gray-400">Speak Out... <br> Before it's too late!</span>
+                                </h1>
+                                <button id="speak" class="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none">
+                                    Speak With Expert
+                                </button>
+                            </div>
+                        </div>
+                        <div data-aos="fade-left" class="md:w-1/3 w-2/3">
+                           <img src="../static/images/image1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 bg-opacity-80 mt-8 h-full w-full" id="display-modal">
+        <div class="max-w-screen-xl min-h-screen bg-white-100 text-gray-800 antialiased px-2 py-4 flex flex-col justify-center sm:py-12">
+            <div class="relative py-2 sm:max-w-xl mx-auto text-center">
+                <span class="text-2xl font-semibold text-white">We are here for you!</span>
+        
+                <form action='/connected' method="post">
+                <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left py-8 px-8">
+                    <label class="block font-semibold">Name<label>
+                    <input type="text" name="name" class="border w-full h-3 px-3 py-4 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-gray-600 rounded-md" required="">
+                    <label class="block mt-5 font-semibold">E-Mail<label>
+                    <input type="email" name="email" class="border w-full h-3 px-3 py-4 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-black-600 rounded-md" required="">
+                    <label class="block mt-5 font-semibold">Phone Number<label>
+                    <input type="tel" name="contact" class="border w-full h-3 px-3 py-4 mt-1 hover:outline-none focus:outline-none focus:ring-1 focus:ring-gray-600 rounded-md" required="">
+                    <label class="block mt-5 font-semibold">Raising againist?<label>
+                        <select name="option" class="border w-full  h-9 px-3 mt-1  hover:outline-none focus:outline-none focus:ring-1 focus:ring-gray-600 rounded-md" required="">
+                            <option value="opt">---------</option>
+                            <option value="Sexual Violence">Sexual Violence</option>
+                            <option value="Domestic Violence">Domestic Violence</option>
+                            <option value="Gender Discrimination">Gender Discrimination</option>
+                            <option value="Child Marriage">Child Marriage</option>
+                            <option value="Women Trafficking">Women Trafficking</option>
+                            <option value="Cyber Crimes">Cyber Crimes</option>
+                          </select>
+                    <div class="flex flex-row mt-5">
+                        <input type="submit" id="post" class="mx-4 bg-orange-500 text-white w-full p-2 rounded-lg cursor-pointer" value="Connect">
+                        <button id="close" class="mx-4 bg-orange-500 text-white w-full p-2 rounded-lg">Close</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mx-auto container f-f-p px-4 xl:px-0 py-24">
+        <h1 class="focus:outline-none text-center text-3xl lg:text-4xl font-extrabold dark:text-white lg:leading-9 tracking-wider text-gray-900">How it works?</h1>
+        <div class="md:mt-24 f-f-p">
+            <div class="hidden md:flex justify-center w-full">
+                <div class="flex flex-col items-center md:items-end md:pr-12 md:border-r-4 border-gray-300 relative md:w-1/2">
+                    <div>
+                        <img class="focus:outline-none" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg1.svg" alt="">
+                    </div>
+                    <div>
+                        <img class="focus:outline-none mt-24" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg2.svg" alt="">
+                    </div>
+                    <div class="flex mt-12 flex-col items-center lg:items-end md:w-8/12">
+                        <h1 class="focus:outline-none dark:text-white  text-xl font-bold leading-5">Get Notified</h1>
+                        <h2 class="focus:outline-none text-gray-500 dark:text-gray-200 mt-3 pl-3 text-center md:text-right text-base leading-6 tracking-wide">
+                            Get notified by an expert within 2 days via phone call, SMS or email. She is selected based on your needs and location.
+                         </h2>
+                    </div>
+                    <div >
+                        <img class="focus:outline-none mt-24" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg3.svg" alt="">
+                    </div>
+                    <img class="hidden md:block absolute right-0 top-0 -mt-2 -mr-1" src="https://cdn.tuk.dev/assets/components/111220/Fs7/line.png" alt="" />
+                </div>
+
+                <div class="flex flex-col items-center md:items-start md:pl-12 lg:border-gray-400 mt-20 md:mt-0 md:w-1/2">
+                    <div>
+                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg4.svg" alt="">
+                    </div>
+
+                    <div class="flex mt-6 flex-col items-center md:items-start md:w-8/12">
+                        <h1 class="focus:outline-none dark:text-white  text-xl font-bold leading-5">Speak Out</h1>
+                        <h2 class="focus:outline-none text-gray-500 dark:text-gray-200 mt-3 text-base leading-6 tracking-wide">
+                            Provide as little information as your email address and pincode. Rest assured, your information is kept confidential and secure.
+                        </h2>
+                    </div>
+                    <div>
+                        <img class="focus:outline-none mt-32" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg5.svg" alt="">
+                    </div>
+                    <div>
+                        <img class="focus:outline-none mt-20" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg6.svg" alt="">
+                    </div>
+                    <div class="flex mt-6 flex-col items-center md:items-start md:w-8/12">
+                        <h1 class="focus:outline-none text-xl dark:text-white font-bold leading-5">Connect</h1>
+                        <h2 class="focus:outline-none text-gray-500 dark:text-gray-200 mt-3 text-base leading-6 tracking-wide">
+                            Connect with the local expert free of charge and rebuild the happier, healthier life you deserve.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex flex-col items-center w-full">
+                <img class="focus:outline-none my-10" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg1.svg" alt="how it work">
+                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg4.svg" alt="">
+                <div class="mt-10">
+                    <h1 class="text-xl text-center dark:text-white  tracking-wide leading-5 font-bold">Speak Out</h1>
+                    <h2 class="text-gray-500 dark:text-gray-200 mt-3 text-center text-base leading-6 tracking-wide">
+                        Provide as little information as your email address and pincode. Rest assured, your information is kept confidential and secure.
+                    </h2>
+                </div>
+                <img class="focus:outline-none my-10" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg5.svg" alt="">
+                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg2.svg" alt="">
+                <div class="mt-10">
+                    <h1 class="text-xl tracking-wide dark:text-white  text-center leading-5 font-bold">Get Notified</h1>
+                    <h2 class="text-gray-500 dark:text-gray-200 mt-3 pl-3 text-center text-base leading-6 tracking-wide">
+                        Get notified by an expert within 2 days via phone call, SMS or email. She is selected based on your needs and location.
+                    </h2>
+                </div>
+                <img class="focus:outline-none my-10" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg3.svg" alt="">
+                <img class="" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg6.svg" alt="">
+                <div class="flex mt-10 flex-col items-center md:items-start md:w-8/12">
+                    <h1 class="text-xl text-center dark:text-white tracking-wide leading-5 font-bold">Connect</h1>
+                    <h2 class="text-gray-500 dark:text-gray-200 mt-3 text-center text-base leading-6 tracking-wide">
+                        Connect with the local expert free of charge and rebuild the happier, healthier life you deserve.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    
+    
+    <div class="container flex justify-center mx-auto pt-16">
+        <div>
+            <h1 class="xl:text-4xl text-3xl text-center text-gray-800 dark:text-white font-extrabold pb-6 mx-auto">
+                Your Councellors
+            </h1>
+        </div>
+    </div>
+    <div class="w-full bg-gray-100 dark:bg-gray-800 px-10 pt-10">
+        <div class="container mx-auto">
+            <div class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/mine.jpeg" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Vamsi</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/jash.jpg" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Jaswanth</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/loki.png" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Lokesh</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/yash.png" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Yaswanth</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/akash.jpg" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Akash</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xl:w-1/3 sm:w-3/4 md:w-2/5 relative mt-16 mb-32 sm:mb-24 xl:max-w-sm lg:w-2/5">
+                    <div class="rounded overflow-hidden shadow-md bg-white dark:bg-gray-900">
+                        <div class="absolute -mt-20 w-full flex justify-center">
+                            <div class="h-32 w-32">
+                                <img src="../static/images/avatar.jfif" class="rounded-full object-cover h-full w-full shadow-md" />
+                            </div>
+                        </div>
+                        <div class="px-6 mt-16 pb-8">
+                            <h1 class="font-bold dark:text-white text-3xl text-center mb-1">Bharath</h1>
+                            <p class="text-center text-gray-600 dark:text-gray-200 text-base pt-3 font-normal">
+                                Barkha Bajaj is a psychologist and the Executive Director of Aks Foundation in Pune. With over 10 years of experience, she has counselling expertise in domestic violence, sexual abuse and sexual assault.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center text-gray-700 p-8" style="background: rgb(0, 0, 0, 0.1);">
+        © 2023 Copyright: <a class="text-gray-800 fn1" href="#">Speak Out</a>
+    </div>
+
+    <script>
+        let displayBtn = document.querySelector('#speak');
+        let displayModal = document.querySelector('#display-modal');
+        const body = document.querySelector("body");
+        displayBtn.addEventListener('click', displayBlock);
+        function displayBlock () {
+            displayModal.style.display = "block";
+            body.style.overflow = "hidden";
+        }
+        document.querySelector('#close').addEventListener('click', () => {
+            displayModal.style.display = "none";
+            body.style.overflow = "auto";
+        })
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+        })
+    </script>
+
+</body>
+</html>
